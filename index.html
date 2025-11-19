@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAINT YOUR CLOUD IN THE SKY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部蓝色横幅 -->
+    <div class="top-banner">
+        <h1>PAINT YOUR CLOUD IN THE SKY</h1>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-container">
+        <!-- 左侧：天空展示区 -->
+        <div class="left-panel">
+            <canvas id="skyCanvas"></canvas>
+        </div>
+
+        <!-- 右侧：控制面板 -->
+        <div class="right-panel">
+            <!-- RANDOM STYLE 区域 -->
+            <div class="section">
+                <h3 class="section-title">RANDOM STYLE</h3>
+                <div class="style-buttons">
+                    <button class="style-btn active" data-style="1">1</button>
+                    <button class="style-btn" data-style="2">2</button>
+                    <button class="style-btn" data-style="3">3</button>
+                    <button class="style-btn" data-style="4">4</button>
+                    <button class="style-btn" data-style="5">5</button>
+                    <button class="style-btn" data-style="6">6</button>
+                    <button class="upload-btn" id="uploadBtn">
+                        <input type="file" id="uploadInput" accept="image/*" style="display: none;">
+                        �
+                    </button>
+                </div>
+            </div>
+
+            <!-- PAINTING SIZE 区域 -->
+            <div class="section">
+                <h3 class="section-title">PAINTING SIZE</h3>
+                <select id="sizeSelector" class="size-dropdown">
+                    <option value="1920x1080">Full HD (1920×1080)</option>
+                    <option value="1080x1080">Instagram Square (1080×1080)</option>
+                    <option value="1080x1920">Instagram Story (1080×1920)</option>
+                    <option value="1200x630">Facebook Post (1200×630)</option>
+                    <option value="1024x512">Twitter Header (1024×512)</option>
+                    <option value="1920x1200">Desktop 16:10 (1920×1200)</option>
+                    <option value="2560x1440">Desktop 2K (2560×1440)</option>
+                    <option value="750x1334">iPhone (750×1334)</option>
+                </select>
+                <div class="size-info">1920 × 1080px (1.78:1)</div>
+            </div>
+
+            <!-- PAINTING AREA 区域 -->
+            <div class="section">
+                <h3 class="section-title">PAINTING AREA</h3>
+                <div class="painting-container">
+                    <canvas id="drawCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- SIZE 滑块区域 -->
+            <div class="section">
+                <h3 class="section-title">SIZE</h3>
+                <div class="slider-container">
+                    <input type="range" id="brushSize" min="5" max="50" value="20" class="brush-slider">
+                    <span class="size-value"><span id="brushSizeValue">20</span> px</span>
+                </div>
+            </div>
+
+            <!-- 操作按钮区域 -->
+            <div class="action-buttons">
+                <button id="generateBtn" class="action-btn generate-btn">
+                    <span class="btn-icon">☁️</span> GENERATE
+                </button>
+                <button id="saveBtn" class="action-btn save-btn">
+                    <span class="btn-icon">✓</span> SAVE
+                </button>
+                <button id="undoBtn" class="action-btn undo-btn">
+                    <span class="btn-icon">↶</span> UNDO
+                </button>
+                <button id="clearCloudBtn" class="action-btn delete-btn">
+                    <span class="btn-icon">🗑</span> DELETES
+                </button>
+                <button id="clearDrawBtn" class="action-btn clear-btn">
+                    <span class="btn-icon">✕</span> CLEARS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
